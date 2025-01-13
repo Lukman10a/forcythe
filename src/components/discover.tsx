@@ -106,7 +106,7 @@ export default function Discover() {
                   </h2>
 
                   <p className="mb-6 sm:text-sm">
-                    <Typewriter text={company.description} delay={100} />
+                    <Typewriter text={company.description} delay={10} />
                   </p>
                   <p className="self-end">{company.title}</p>
                 </div>
