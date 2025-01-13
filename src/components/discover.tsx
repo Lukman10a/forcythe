@@ -96,12 +96,14 @@ export default function Discover() {
             company.name === activeCompany && (
               <div
                 key={company.name}
-                className="bg-[#102444] grid grid-cols-2 text-white p-10 rounded-lg mx-auto max-w-lg h-[450px]"
+                className="bg-[#102444] grid grid-cols-2 text-white p-10 sm:p-4 rounded-lg mx-auto max-w-lg h-[450px]"
               >
                 <div className="">
-                  <h2 className="text-2xl font-bold mb-4 ">{company.name}</h2>
+                  <h2 className="text-2xl sm:text-base font-bold mb-4 ">
+                    {company.name}
+                  </h2>
 
-                  <p className="mb-6">
+                  <p className="mb-6 sm:text-sm">
                     <Typewriter text={company.description} delay={100} />
                   </p>
                   <p className="self-end">{company.title}</p>

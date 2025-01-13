@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import BookCallButton from "./bookCallButton";
+import idea from "../../public/assets/svg/idea.svg";
 import planlaunch from "../../public/assets/svg/plan-launch.svg";
 import plandevelop from "../../public/assets/svg/plan-develop.svg";
 import plandesign from "../../public/assets/svg/plan-design.svg";
@@ -18,6 +19,12 @@ export default function Step() {
 
   // Map to associate steps with images and text content
   const steps: { [key: string]: Step } = {
+    Idea: {
+      image: idea,
+      title: "Your vision is unique.",
+      description:
+        "Nurture Your Idea into a Blueprint for Success with our strategic insights and industry expertise. Your vision is unique, let’s us shape it.",
+    },
     Design: {
       image: plandesign,
       title: "Crafting the blueprint for success",
@@ -39,7 +46,7 @@ export default function Step() {
   };
 
   return (
-    <div className="bg-[#080414] text-white p-20">
+    <div className="bg-[#080414] text-white p-20 sm:p-6">
       <h1 className="text-5xl mb-8">
         From{" "}
         <span className="text-[#62a8ea]">
@@ -54,16 +61,16 @@ export default function Step() {
         <Typewriter text=" every step of the way to success." delay={100} />
       </h1>
 
-      <div className="grid grid-cols-2 gap-10 items-center">
+      <div className="grid grid-cols-2 gap-10 items-center sm:grid-cols-1">
         {/* Left Section */}
         <section className="space-y-8 flex flex-col">
           {/* Navigation Bar */}
-          <div className="rounded-full p-4 mt-8 border-2 border-[#b8d4f4] grid gap-4 grid-cols-3">
+          <div className="rounded-full p-4 mt-8 border-2 border-[#b8d4f4] grid gap-4 grid-cols-4">
             {Object.keys(steps).map((step) => (
               <p
                 key={step}
                 onClick={() => setCurrentStep(step)}
-                className={`overflow-hidden px-2 md:px-2.5 py-3 md:py-3.5 rounded-full text-center text-base font-medium cursor-pointer transition-all duration-300 ${
+                className={`overflow-hidden px-2 py-3 sm:p-2 rounded-full text-center text-base sm:text-sm font-medium cursor-pointer transition-all duration-300 ${
                   currentStep === step
                     ? "bg-[#b8d4f4] text-[#080414]"
                     : "bg-transparent text-white"
