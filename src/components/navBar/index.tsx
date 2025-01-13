@@ -31,6 +31,7 @@ import BookCallButton from "../bookCallButton";
 
 export function NavBar() {
   const [isSheetOpen, setIsSheetOpen] = React.useState(false);
+  const [isHarmbugger] = React.useState(true);
 
   const [activeItem, setActiveItem] = React.useState<string | null>(null);
   const { lock, unlock } = useScrollLock({
@@ -63,35 +64,37 @@ export function NavBar() {
   }, [router.events]);
 
   return (
-    <nav className="relative z-50 font-mono" id="scrollable">
-      <nav className="supports-[backdrop-filter]:bg-main-yellow/60 fixed top-0 w-full border-b bg-main-gradient px-7 backdrop-blur-lg">
-        <div className="container flex h-16 items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center gap-6">
-            <Link href="/" className="space-x-2">
-              <Image
-                src={forcytheLogo}
-                width={160}
-                height={160}
-                priority
-                alt="brand logo"
-                className="size-20 object-contain"
-              />
-            </Link>
-          </div>
-
-          {/* Desktop Links */}
-          <div className="sm:hidden flex gap-6 text-white">
-            {navItems.map((item, index) => (
-              <Link href={item.href || "/"} key={index}>
-                <Button
-                  variant="ghost"
-                  className="text-lg font-medium transition-colors "
-                >
-                  {item.title}
-                </Button>
+    <nav className="relative z-50" id="scrollable">
+      <nav className="fixed top-0 w-full px-7 backdrop-blur-lg">
+        <div className="container flex h-20 items-center justify-between">
+          <div className="flex items-center gap-10">
+            {/* Logo */}
+            <div className="flex items-center">
+              <Link href="/" className="">
+                <Image
+                  src={forcytheLogo}
+                  width={160}
+                  height={160}
+                  priority
+                  alt="brand logo"
+                  className="size-28 object-contain"
+                />
               </Link>
-            ))}
+            </div>
+
+            {/* Desktop Links */}
+            <div className="sm:hidden flex text-white">
+              {navItems.map((item, index) => (
+                <Link href={item.href || "/"} key={index}>
+                  <Button
+                    variant="ghost"
+                    className="text-lg font-medium transition-colors "
+                  >
+                    {item.title}
+                  </Button>
+                </Link>
+              ))}
+            </div>
           </div>
 
           <div className="sm:hidden">
@@ -99,77 +102,54 @@ export function NavBar() {
           </div>
 
           {/* Hamburger Menu */}
-          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-            <SheetTrigger asChild>
-              <div className="">
-                <Button className="sm:block border-[1px] hidden bg-transparent relative">
-                  <Menu className="h-6 w-6 text-white" />
-                  <span className="sr-only">Toggle menu</span>
-                </Button>
-              </div>
-            </SheetTrigger>
-            <SheetContent
-              side="right"
-              className="max-w-[400px] bg-nav-items sm:w-full"
-            >
-              <SheetHeader>
-                <SheetTitle>
-                  <Link
-                    href="/"
-                    className="flex items-center space-x-2 font-mono "
-                  >
-                    <Image
-                      src={"/assets/mbayan.png"}
-                      width={150}
-                      height={150}
-                      alt="brand logo"
-                      className="size-12"
-                    />
-                  </Link>
-                </SheetTitle>
-                <SheetDescription className="text-left">
-                  Explore our available classes to increase your understanding
-                  of the religion
-                </SheetDescription>
-              </SheetHeader>
-              <ScrollArea className="no-scrollbar mt-6 h-[calc(100vh-8rem)]">
-                <Accordion type="single" collapsible>
-                  {navItems.map((item, index) => (
-                    <Link href={item.href || "/"} key={index}>
-                      <AccordionItem value={`item-${index}`} key={item.title}>
-                        <AccordionTrigger>{item.title}</AccordionTrigger>
-                        {/* <AccordionContent className="no-scrollbar">
-                        {item.items.map((section) => (
-                          <div key={section.category} className="mb-4">
-                            <Link href={section?.href || "#"}>
-                              <h3 className="mb-2 text-sm font-semibold">
-                                {section.category}
-                              </h3>
-                            </Link>
-                            <p className="mb-2 text-xs text-black opacity-50">
-                              {section.description}
-                            </p>
-                            <div className="space-y-2">
-                              {section?.subitems?.map((subitem) => (
-                                <Link
-                                  key={subitem.title}
-                                  href={subitem.href}
-                                  className="block text-sm hover:text-primary"
-                                >
-                                {subitem.title}
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
-                        ))}
-                      </AccordionContent> */}
-                      </AccordionItem>
+          {isHarmbugger && (
+            <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+              <SheetTrigger asChild>
+                <div className="">
+                  <Button className="sm:block border-[1px] hidden bg-transparent relative">
+                    <Menu className="h-6 w-6 text-white" />
+                    <span className="sr-only">Toggle menu</span>
+                  </Button>
+                </div>
+              </SheetTrigger>
+              <SheetContent
+                side="right"
+                className="max-w-[400px] bg-nav-items sm:w-full"
+              >
+                <SheetHeader>
+                  <SheetTitle>
+                    <Link
+                      href="/"
+                      className="flex items-center space-x-2 font-mono "
+                    >
+                      <Image
+                        src={"/assets/mbayan.png"}
+                        width={150}
+                        height={150}
+                        alt="brand logo"
+                        className="size-12"
+                      />
                     </Link>
-                  ))}
-                </Accordion>
-              </ScrollArea>
-            </SheetContent>
-          </Sheet>
+                  </SheetTitle>
+                  <SheetDescription className="text-left">
+                    Explore our available classes to increase your understanding
+                    of the religion
+                  </SheetDescription>
+                </SheetHeader>
+                <ScrollArea className="no-scrollbar mt-6 h-[calc(100vh-8rem)]">
+                  <Accordion type="single" collapsible>
+                    {navItems.map((item, index) => (
+                      <Link href={item.href || "/"} key={index}>
+                        <AccordionItem value={`item-${index}`} key={item.title}>
+                          <AccordionTrigger>{item.title}</AccordionTrigger>
+                        </AccordionItem>
+                      </Link>
+                    ))}
+                  </Accordion>
+                </ScrollArea>
+              </SheetContent>
+            </Sheet>
+          )}
         </div>
       </nav>
     </nav>
