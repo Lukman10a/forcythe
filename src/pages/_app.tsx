@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <div className={`${lexend.className}`}>
       <NavBar />
       <main>
-        <Component {...pageProps} />;
+        <Component {...pageProps} />
       </main>
       <Footer />
     </div>
