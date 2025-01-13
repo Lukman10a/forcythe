@@ -45,7 +45,7 @@ export default function Discover() {
   ];
 
   return (
-    <div className="bg-[#080414] p-20 sm:p-10">
+    <div className="bg-[#080414] p-20 sm:p-4">
       <h1 className="text-center text-5xl sm:text-3xl text-white mb-10">
         <Typewriter
           text=" Discover the transformative stories of startups that scaled new heights with us"
@@ -55,7 +55,7 @@ export default function Discover() {
 
       {/* Navigation Bar */}
       <div className="flex justify-center items-center mb-10">
-        <div className="w-full border-[1px] border-[#06438C] text-white rounded-full grid grid-cols-5 min-w-[750px] sm:min-w-[350px] ">
+        <div className="w-full border-[1px] border-[#06438C] text-white rounded-full grid grid-cols-5 min-w-[750px] sm:min-w-[360px]">
           {companies.map((company, index) => (
             <div
               key={company.name}
@@ -82,7 +82,9 @@ export default function Discover() {
                   height={100}
                 />
               )}
-              {company.text && <span>{company.text}</span>}
+              {company.text && (
+                <span className="sm:text-[10px]">{company.text}</span>
+              )}
               {!company.logo && !company.text && <span>{company.name}</span>}
             </div>
           ))}
