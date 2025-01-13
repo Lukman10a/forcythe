@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import tailwindAnimate from "tailwindcss-animate";
+import tailwindTypography from "@tailwindcss/typography";
 
 export default {
   content: [
@@ -31,6 +33,9 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+      },
+      transitionTimingFunction: {
+        "minor-spring": "cubic-bezier(0.18,0.89,0.82,1.04)",
       },
       keyframes: {
         "reveal-up": {
@@ -127,5 +132,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [tailwindAnimate, tailwindTypography],
 } satisfies Config;

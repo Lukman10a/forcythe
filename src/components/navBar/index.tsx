@@ -94,20 +94,19 @@ export function NavBar() {
             ))}
           </div>
 
-          <div>
+          <div className="sm:hidden">
             <BookCallButton />
           </div>
 
           {/* Hamburger Menu */}
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
-              <Button
-                variant="outline"
-                className="border-white sm:block hidden bg-transparent"
-              >
-                <Menu className="h-6 w-6 text-white" />
-                <span className="sr-only">Toggle menu</span>
-              </Button>
+              <div className="">
+                <Button className="sm:block border-[1px] hidden bg-transparent relative">
+                  <Menu className="h-6 w-6 text-white" />
+                  <span className="sr-only">Toggle menu</span>
+                </Button>
+              </div>
             </SheetTrigger>
             <SheetContent
               side="right"

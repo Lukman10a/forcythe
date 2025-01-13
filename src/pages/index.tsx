@@ -2,7 +2,9 @@
 
 import BlogList from "@/components/blogList";
 import Discover from "@/components/discover";
+import Features from "@/components/features";
 import HeroSection from "@/components/hero";
+import StatsSection from "@/components/stats";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -19,6 +21,8 @@ export default function Home() {
     <div>
       <HeroSection />
       <Discover />
+      <Features />
+      <StatsSection />
       <BlogList />
     </div>
   );

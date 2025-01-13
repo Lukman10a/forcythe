@@ -16,20 +16,20 @@ export default function Discover() {
   ];
 
   return (
-    <div className="bg-[#080414] p-20">
-      <h1 className="text-center text-5xl text-white mb-10">
+    <div className="bg-[#080414] p-20 sm:p-10">
+      <h1 className="text-center text-5xl sm:text-3xl text-white mb-10">
         Discover the transformative stories of startups that scaled new heights
         with us
       </h1>
 
       {/* Navigation Bar */}
       <div className="flex justify-center items-center mb-10">
-        <div className="w-full border-[1px] border-[#06438C] text-white rounded-full grid grid-cols-5 min-w-[750px]">
+        <div className="w-full border-[1px] border-[#06438C] text-white rounded-full grid grid-cols-5 min-w-[750px] sm:min-w-[350px] ">
           {companies.map((company, index) => (
             <div
               key={company.name}
               onClick={() => setActiveCompany(company.name)}
-              className={`w-full p-[1.1rem] cursor-pointer text-center transition-all duration-300 flex justify-center items-center ${
+              className={`w-full  p-[1.1rem] cursor-pointer text-center transition-all duration-300 flex justify-center items-center ${
                 activeCompany === company.name
                   ? "bg-[#103256] font-semibold"
                   : ""
