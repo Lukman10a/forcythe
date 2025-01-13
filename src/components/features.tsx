@@ -39,7 +39,7 @@ export default function Features() {
   };
 
   return (
-    <section className="bg-[#102444] py-24">
+    <section className="bg-main-gradient-reverse py-24">
       <h1 className="text-4xl sm:text-3xl text-center p-10 text-white">
         Your best call for B2B/B2C product innovation
       </h1>

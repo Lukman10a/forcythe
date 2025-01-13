@@ -40,7 +40,7 @@ const blogPosts: BlogPost[] = [
 
 export default function BlogList() {
   return (
-    <div className="bg-[#080414] p-20 sm:p-10">
+    <div className="bg-main-gradient-reverse p-20 sm:p-10">
       <div className="flex justify-between items-center sm:flex-col sm:gap-5 text-white py-16">
         <h1 className="text-5xl sm:text-3xl">
           <Typewriter

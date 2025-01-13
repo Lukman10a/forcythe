@@ -16,7 +16,7 @@ const stats: Stat[] = [
 
 export default function StatsSection() {
   return (
-    <div className="bg-[#102444] overflow-hidden text-white px-52 sm:px-0">
+    <div className="bg-main-gradient overflow-hidden text-white px-52 sm:px-0">
       {/* Content */}
       <div className="pt-52 sm:pt-14 rounded-t-full border-2 border-b-0 text-center space-y-20 sm:space-y-8">
         {/* Heading */}

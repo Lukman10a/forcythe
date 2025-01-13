@@ -11,7 +11,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <div className="bg-[#081424] text-white grid grid-cols-3 sm:grid-cols-1 gap-8 justify-items-center p-20 sm:p-10">
+    <div className="bg-footer-gradient text-white grid grid-cols-3 sm:grid-cols-1 gap-8 justify-items-center p-20 sm:p-10">
       {/* Left Section */}
       <div className="space-y-4 w-full ">
         <form className="flex items-center border border-gray-300 rounded-full overflow-hidden">

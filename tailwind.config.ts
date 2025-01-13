@@ -30,6 +30,14 @@ export default {
       },
     },
     extend: {
+      backgroundImage: {
+        "main-gradient":
+          "linear-gradient(to bottom, #080414, #100f1f, #12162b, #131d37, #102444)",
+        "main-gradient-reverse":
+          "linear-gradient(to bottom, #102444,#131d37, #081424, #100f1f, #080414);",
+        "footer-gradient":
+          "linear-gradient(to bottom, #080414, #081424, #081424, #081424)",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
