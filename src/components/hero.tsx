@@ -14,7 +14,7 @@ export default function HeroSection() {
       <div className="flex flex-col items-center bg-[url('/assets/svg/map.svg')] bg-top bg-no-repeat justify-center h-screen overflow-hidden">
         {/* Content */}
         <div className="flex flex-col items-start max-w-[1200px] border-2 rounded-[50px] py-8 sm:py-8 px-20 sm:px-10 mt-10 sm:mt-16 sm:mx-4 mb-16 bg-opacity-10 bg-white border-none">
-          <h1 className="text-6xl sm:text-5xl font-bold text-white leading-snug relative">
+          <div className="text-6xl sm:text-5xl font-bold text-white leading-snug relative">
             <span className="">
               <Typewriter text="We build" delay={100} />
             </span>{" "}
@@ -24,17 +24,17 @@ export default function HeroSection() {
             <span className=" typewriter">
               <Typewriter text=" that shape a better future" delay={100} />
             </span>
-          </h1>
+          </div>
 
           <h1></h1>
-          <p className="mt-4 text-lg text-gray-400">
+          <div className="mt-4 text-lg text-gray-400">
             <Typewriter
               text="We’re the architects of digital excellence across industries. We
             redefine business with cutting-edge digital strategies that invoke
             sector-wide transformation."
               delay={100}
             />
-          </p>
+          </div>
           <div className="mt-8">
             <Link
               href="#"

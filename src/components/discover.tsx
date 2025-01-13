@@ -96,7 +96,7 @@ export default function Discover() {
             company.name === activeCompany && (
               <div
                 key={company.name}
-                className="bg-[#102444] grid grid-cols-2 text-white p-10 rounded-lg mx-auto max-w-lg"
+                className="bg-[#102444] grid grid-cols-2 text-white p-10 rounded-lg mx-auto max-w-lg h-[450px]"
               >
                 <div className="">
                   <h2 className="text-2xl font-bold mb-4 ">{company.name}</h2>
@@ -104,7 +104,7 @@ export default function Discover() {
                   <p className="mb-6">
                     <Typewriter text={company.description} delay={100} />
                   </p>
-                  <p>{company.title}</p>
+                  <p className="self-end">{company.title}</p>
                 </div>
                 <Image
                   src={company.logo || "/placeholder-logo.svg"}
