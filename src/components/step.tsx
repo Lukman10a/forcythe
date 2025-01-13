@@ -47,7 +47,7 @@ export default function Step() {
 
   return (
     <div className="bg-[#080414] text-white p-20 sm:p-6">
-      <h1 className="text-5xl mb-8">
+      <h1 className="text-5xl mb-8 sm:text-3xl">
         From{" "}
         <span className="text-[#62a8ea]">
           <Typewriter text="Spark" delay={100} />
