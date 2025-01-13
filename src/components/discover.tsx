@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Typewriter from "./ui/animated/typewriter";
 
 export default function Discover() {
-  const [activeCompany, setActiveCompany] = useState("stac.ai");
+  const [activeCompany, setActiveCompany] = useState("Starks Associate");
 
   const companies = [
     {
@@ -60,7 +60,7 @@ export default function Discover() {
             <div
               key={company.name}
               onClick={() => setActiveCompany(company.name)}
-              className={`w-full  p-[1.1rem] cursor-pointer text-center transition-all duration-300 flex justify-center items-center ${
+              className={`w-full p-[1.1rem] cursor-pointer text-center transition-all duration-300 flex justify-center items-center ${
                 activeCompany === company.name
                   ? "bg-[#103256] font-semibold"
                   : ""

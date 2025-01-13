@@ -13,16 +13,16 @@ export default function HeroSection() {
     <section className="bg-[#080414] ">
       <div className="flex flex-col items-center bg-[url('/assets/svg/map.svg')] bg-top bg-no-repeat justify-center h-screen overflow-hidden">
         {/* Content */}
-        <div className="flex flex-col items-start max-w-4xl border-2 rounded-[50px] py-4 sm:py-8 px-20 sm:px-10 mt-10 sm:mt-16 sm:mx-4 mb-16 bg-opacity-10 bg-white border-none">
+        <div className="flex flex-col items-start max-w-[1200px] border-2 rounded-[50px] py-8 sm:py-8 px-20 sm:px-10 mt-10 sm:mt-16 sm:mx-4 mb-16 bg-opacity-10 bg-white border-none">
           <h1 className="text-6xl sm:text-5xl font-bold text-white leading-snug relative">
-            <span className="text-blue-500 ">
+            <span className="">
               <Typewriter text="We build" delay={100} />
             </span>{" "}
             <span className="text-blue-500 typewriter">
-              <Typewriter
-                text=" products that shape a better future"
-                delay={100}
-              />
+              <Typewriter text=" products" delay={100} />
+            </span>
+            <span className=" typewriter">
+              <Typewriter text=" that shape a better future" delay={100} />
             </span>
           </h1>
 

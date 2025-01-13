@@ -5,6 +5,7 @@ import Discover from "@/components/discover";
 import Features from "@/components/features";
 import HeroSection from "@/components/hero";
 import StatsSection from "@/components/stats";
+import Step from "@/components/step";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -21,6 +22,7 @@ export default function Home() {
     <div>
       <HeroSection />
       <Discover />
+      <Step />
       <Features />
       <StatsSection />
       <BlogList />

@@ -38,55 +38,6 @@ const blogPosts: BlogPost[] = [
   },
 ];
 
-// export default function BlogList() {
-//   return (
-//     <div className="bg-[#080414]">
-//       <div className="grid grid-cols-3 gap-10 p-20 cursor-pointer ">
-//         {blogPosts.map((post) => (
-//           <div
-//             key={post.id}
-//             className="space-y-6 hover:border-2 hover:rounded-3xl hover:ease-in-out"
-//           >
-//             <div className="aspect-[16/9] relative">
-//               <Image
-//                 src={post.image}
-//                 alt={post.title}
-//                 fill
-//                 className="object-cover rounded-3xl"
-//               />
-//             </div>
-
-//             <div className="border-l-2 pl-5 ml-5">
-//               <span className="inline-block text-xl font-medium text-white rounded-full">
-//                 Blog
-//               </span>
-//               <div className=" space-x-2 text-lg text-gray-300 pb-4">
-//                 <span>{post.author}</span>
-//                 <span>•</span>
-//                 <span>{post.date}</span>
-//               </div>
-//               <div className="space-y-1 mb-6">
-//                 <h2 className="text-2xl font-bold text-white ">{post.title}</h2>
-//               </div>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//       <div className="py-10 space-y-7">
-//         <h1 className="text-center text-white text-5xl ">
-//           <span className="block text-[#084484]">Ready to Scale?</span>
-//           <span className="block ">
-//             Join successful brands that chose us <br />
-//           </span>
-//           <span className="block text-[#084484]">
-//             as their growth accelerator
-//           </span>
-//         </h1>
-//         <BookCallButton />
-//       </div>
-//     </div>
-//   );
-// }
 export default function BlogList() {
   return (
     <div className="bg-[#080414] p-20 sm:p-10">
