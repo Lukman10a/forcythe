@@ -40,6 +40,9 @@ export default function Features() {
 
   return (
     <section className="bg-[#102444] py-24">
+      <h1 className="text-4xl sm:text-3xl text-center p-10 text-white">
+        Your best call for B2B/B2C product innovation
+      </h1>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-3 sm:grid-cols-1 gap-8 place-items-center overflow-hidden">
           {features.map((feature, index) => (
@@ -54,13 +57,15 @@ export default function Features() {
                 whileHover="hover"
               >
                 <div className="text-white bg-[#080414] p-10 space-y-6">
-                  <Image
-                    className="w-14"
-                    src="/assets/svg/layers-three.svg"
-                    alt="Layered Three"
-                    width={20}
-                    height={20}
-                  />
+                  <div className="p-3 rounded-lg bg-[#102444] w-fit">
+                    <Image
+                      className="w-14"
+                      src="/assets/svg/layers-three.svg"
+                      alt="Layered Three"
+                      width={20}
+                      height={20}
+                    />
+                  </div>
                   <h4 className="text-3xl">{feature.title}</h4>
                   <p className="text-lg">{feature.description}</p>
                 </div>
