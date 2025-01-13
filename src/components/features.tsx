@@ -53,7 +53,7 @@ export default function Features() {
                 custom={index}
                 whileHover="hover"
               >
-                <div className="text-white bg-[#080414] p-10 space-y-6 ">
+                <div className="text-white bg-[#080414] p-10 space-y-6">
                   <Image
                     className="w-14"
                     src="/assets/svg/layers-three.svg"

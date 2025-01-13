@@ -1,25 +1,56 @@
 import Image from "next/image";
 import React, { useState } from "react";
+import Typewriter from "./ui/animated/typewriter";
 
 export default function Discover() {
   const [activeCompany, setActiveCompany] = useState("stac.ai");
 
   const companies = [
-    { name: "Starks", text: "Starks", logo: "assets/svg/stark.svg" },
+    {
+      name: "Starks Associate",
+      text: "Starks",
+      logo: "assets/svg/stark.svg",
+      description:
+        "Partnering with Forcythe was like finding a hidden gem. Their genuine interest in our success was palpable, and the continuous support post-launch has been a testament to their commitment. They’ve become more than a service provider; they’re a trusted ally.",
+      title: "John, Management",
+    },
     {
       name: "ExecutivePros",
       logo: "/assets/svg/executive.svg",
+      description:
+        "The team understood the assignment and delivered very well. One of the things that stood them out was how they took our concepts and turned it into visually appealing designs that caught the eyes of our clients and made increased web engagements. Kudos!",
+      title: "Testimony, Co-founder",
     },
-    { name: "stac.ai", logo: "assets/svg/stacai.svg" },
-    { name: "Iwaria", logo: "/assets/svg/iwaria.svg" },
-    { name: "Beaupreneur", logo: "/assets/svg/beaupreneur.svg" },
+    {
+      name: "Stac AI",
+      logo: "assets/svg/stacai.svg",
+      description:
+        "Forcythe is seriously amazing when it comes to coming up with new ideas. They took our rough ideas and turned them into something incredible online. Their team’s commitment to our vision was evident every step of the way.",
+      title: "Edwin, Former CTO",
+    },
+    {
+      name: "Iwaria",
+      logo: "/assets/svg/iwaria.svg",
+      description:
+        "The moment we engaged Forcythe, it was clear they were in a league of their own. Their strategic approach to our project not only enhanced our online platform but also enriched our brand’s story, captivating our audience like never before.",
+      title: "Iwaria, Founder",
+    },
+    {
+      name: "Beaupreneur",
+      logo: "/assets/svg/beaupreneur.svg",
+      description:
+        "I’m beyond impressed with the dedication Forcythe showed. They didn’t just deliver-they educated us, involving us in the creative process. The result? A website that truly feels like ours and speaks directly to our customers’ hearts.",
+      title: "Christiana, Founder",
+    },
   ];
 
   return (
     <div className="bg-[#080414] p-20 sm:p-10">
       <h1 className="text-center text-5xl sm:text-3xl text-white mb-10">
-        Discover the transformative stories of startups that scaled new heights
-        with us
+        <Typewriter
+          text=" Discover the transformative stories of startups that scaled new heights with us"
+          delay={100}
+        />
       </h1>
 
       {/* Navigation Bar */}
@@ -59,18 +90,22 @@ export default function Discover() {
       </div>
 
       {/* Selected Company Details */}
-      <div className="text-center">
+      <div className="">
         {companies.map(
           (company) =>
             company.name === activeCompany && (
               <div
                 key={company.name}
-                className="bg-[#102444] text-white p-10 rounded-lg mx-auto max-w-lg"
+                className="bg-[#102444] grid grid-cols-2 text-white p-10 rounded-lg mx-auto max-w-lg"
               >
-                <h2 className="text-2xl font-bold mb-4">{company.name}</h2>
-                <p className="mb-6">
-                  The team understood the assignment and delivered very well.
-                </p>
+                <div className="">
+                  <h2 className="text-2xl font-bold mb-4 ">{company.name}</h2>
+
+                  <p className="mb-6">
+                    <Typewriter text={company.description} delay={100} />
+                  </p>
+                  <p>{company.title}</p>
+                </div>
                 <Image
                   src={company.logo || "/placeholder-logo.svg"}
                   alt={`${company.name} logo`}

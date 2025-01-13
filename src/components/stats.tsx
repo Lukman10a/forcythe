@@ -1,5 +1,7 @@
 "use client";
 
+import Typewriter from "./ui/animated/typewriter";
+
 interface Stat {
   value: string;
   label: string;
@@ -19,9 +21,15 @@ export default function StatsSection() {
       <div className="pt-52 sm:pt-14 rounded-t-full border-2 border-b-0 text-center space-y-20 sm:space-y-8">
         {/* Heading */}
         <h2 className="text-4xl md:text-xl font-bold text-white leading-tight">
-          <span className="block">We build solutions that help</span>
-          <span className="text-blue-400">businesses</span> of all sizes to{" "}
-          <span className="text-blue-400">scale</span>
+          <span className="block">
+            <Typewriter text="We build solutions that help" delay={100} />
+          </span>
+          <span className="text-blue-400">
+            <Typewriter text="businesses of all sizes to" delay={100} />
+          </span>
+          <span className="text-blue-400">
+            <Typewriter text="scale" delay={100} />
+          </span>
         </h2>
 
         {/* Stats */}

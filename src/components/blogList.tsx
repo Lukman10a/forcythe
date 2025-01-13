@@ -1,5 +1,6 @@
 import Image from "next/image";
 import BookCallButton from "./bookCallButton";
+import Typewriter from "./ui/animated/typewriter";
 
 interface BlogPost {
   id: number;
@@ -90,7 +91,12 @@ export default function BlogList() {
   return (
     <div className="bg-[#080414] p-20 sm:p-10">
       <div className="flex justify-between items-center sm:flex-col sm:gap-5 text-white py-16">
-        <h1 className="text-5xl">Read our articles, news and product blog</h1>
+        <h1 className="text-5xl">
+          <Typewriter
+            text="Read our articles, news and product blog"
+            delay={100}
+          />
+        </h1>
         <div className="sm:self-start">
           <BookCallButton />
         </div>

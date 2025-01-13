@@ -5,6 +5,7 @@ import factor from "../../public/assets/svg/factor.svg";
 import unlock from "../../public/assets/svg/unlock.svg";
 import phone from "../../public/assets/svg/phone.svg";
 import Link from "next/link";
+import Typewriter from "./ui/animated/typewriter";
 
 export default function HeroSection() {
   const partners = [global, starks, factor, unlock, phone];
@@ -12,15 +13,27 @@ export default function HeroSection() {
     <section className="bg-[#080414] ">
       <div className="flex flex-col items-center bg-[url('/assets/svg/map.svg')] bg-top bg-no-repeat justify-center h-screen overflow-hidden">
         {/* Content */}
-        <div className="flex flex-col items-start max-w-4xl border-2 rounded-[50px] py-4 sm:py-8 px-20 sm:px-10 mt-10 sm:mt-16 sm:mx-4 mb-16 bg-opacity-10 bg-white border-none ">
-          <h1 className="text-6xl sm:text-5xl font-bold text-white leading-snug">
-            We build <span className="text-blue-500">products</span> that shape
-            a better future
+        <div className="flex flex-col items-start max-w-4xl border-2 rounded-[50px] py-4 sm:py-8 px-20 sm:px-10 mt-10 sm:mt-16 sm:mx-4 mb-16 bg-opacity-10 bg-white border-none">
+          <h1 className="text-6xl sm:text-5xl font-bold text-white leading-snug relative">
+            <span className="text-blue-500 ">
+              <Typewriter text="We build" delay={100} />
+            </span>{" "}
+            <span className="text-blue-500 typewriter">
+              <Typewriter
+                text=" products that shape a better future"
+                delay={100}
+              />
+            </span>
           </h1>
+
+          <h1></h1>
           <p className="mt-4 text-lg text-gray-400">
-            We’re the architects of digital excellence across industries. We
+            <Typewriter
+              text="We’re the architects of digital excellence across industries. We
             redefine business with cutting-edge digital strategies that invoke
-            sector-wide transformation.
+            sector-wide transformation."
+              delay={100}
+            />
           </p>
           <div className="mt-8">
             <Link
@@ -32,7 +45,10 @@ export default function HeroSection() {
           </div>
         </div>
         <p className="text-white text-center text-5xl">
-          Success in Motion - Our clients’ journey
+          <Typewriter
+            text="Success in Motion - Our clients’ journey"
+            delay={100}
+          />
         </p>
       </div>
 
